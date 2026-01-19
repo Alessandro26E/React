@@ -10,7 +10,7 @@ function Header( ) {
     useEffect(() => {
         console.log(search)
     },[search])
-
+console.log("oi")
 
     return (
     <div className='container'>
