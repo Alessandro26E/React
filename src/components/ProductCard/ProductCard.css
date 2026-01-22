@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 370px;
+    background-color: rgb(211, 211, 211);
+    font-family: 'Inter', sans-serif;
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.card-container > img {
+    height: 250px;
+    width: 250px;
+}
+
+.card-container > h1 {
+    font-size: 20px;
+    width: 100%;
+}
+
+.card-container > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.card-container > span::after {
+    content: 'Add to Cart';
+    font-family: 'Inter',sans-serif;
+    font-weight: 700;
+    color: rgb(37, 37, 37);
+    top: 5;
+    left: -65px;
+    position: absolute;
+    font-size: 0.7rem;
+    width: 300px;
+    display: none;
+}
+
+.card-container:hover > span {
+    display: flex;
+}
+
+.rating-div {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.rating-div > p {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+#starIcon {
+    color: rgb(8, 115, 255);
+}
+

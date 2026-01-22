@@ -1,8 +1,7 @@
 const getProducts = async (query) => {
-    console.log("Oi")
-    const resp = await fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${query}`)
+    const resp = await fetch(`https://dummyjson.com/products/search?q=${query}`)
     const data = await resp.json()
-    return data
+    return  data.products
 };
 
 export default getProducts;
