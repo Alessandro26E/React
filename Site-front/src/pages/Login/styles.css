@@ -1,0 +1,323 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Yarndings+20&display=swap');
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+html, body {
+  height: 100%; 
+  width: 100%;
+  background-color: var(--foreground);
+}
+
+#container {
+  position: relative;
+  background-image: var(--background);
+  overflow: hidden;
+}
+
+.back-login {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    border: solid rgb(32, 32, 32) 1px;
+    background-color: rgb(1, 8, 2);
+}
+
+#login-h1 {
+    margin-top: 20px;
+   font-family: "Inter", sans-serif;
+}
+
+#emails {
+    color: white;
+    padding-left: 5px;
+}
+
+#emailicon {
+  font-size: 21px;
+  padding-left: 10px;
+}
+
+#lockIcon {
+  font-size: 21px;
+  padding-left: 10px;
+}
+
+label {
+    font-family: 'Inter', sans-serif;
+}
+
+input:focus {
+  outline: none;
+  
+}
+
+#inputId:focus-within {
+  border: 1px solid rgb(255,174,0);  
+}
+
+#eyeIcon {
+  padding-right: 5px;
+}
+
+#submitBtn {
+  transition: all 0.3s ease-out; 
+}
+
+#submitBtn:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(238, 255, 2, 0.4) 0px 18px 50px -10px;
+}
+
+#cardNotify {
+  width: 350px;
+  height: 45px;
+  background-color: rgba(123, 255, 0, 0.123);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(92, 141, 1, 0.856);
+  box-shadow: rgba(113, 233, 0, 0.5) 0px 5px 50px -10px;
+  
+  p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+
+
+.divider {
+  margin-top: 16px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  text-align: center;
+  position: relative;
+}
+
+.divider::after {
+  content: '';
+  position: absolute;
+  top:50%;
+  transform: translateX(2%);
+  width: 46%;
+  height: 1.3px;
+  background-color: rgb(39, 39, 39);
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top:50%;
+  transform: translateX(-102%);
+  width: 45%;
+  height: 1.3px;
+  background-color: rgb(39, 39, 39);
+}
+
+#googleBTN {
+ transition: transform 0.3s ease-out;
+}
+
+#googleBTN:hover  {
+  transform: scale(1.02);
+  background-color: rgb(255, 255, 255);
+  color: black;
+
+  svg {
+    fill: black;
+  }
+}
+
+@theme  {
+     /* Core Background Colors */
+    --background: 220 20% 4%;
+    --foreground: 120 100% 98%;
+
+    --font-inter: "Inter";
+    /* Card Colors */
+    --card: 220 25% 6%;
+    --card-foreground: 120 100% 98%;
+
+    /* Popover Colors */
+    --popover: 220 25% 6%;
+    --popover-foreground: 120 100% 98%;
+
+    /* Gaming Green Primary */
+    --primary: 150 100% 53%;
+    --primary-foreground: 220 20% 4%;
+    --primary-glow: 150 100% 65%;
+
+    /* Secondary Gaming Colors */
+    --secondary: 220 25% 8%;
+    --secondary-foreground: 120 100% 98%;
+
+    /* Muted Elements */
+    --muted: 220 20% 12%;
+    --muted-foreground: 220 10% 70%;
+
+    /* Accent Colors */
+    --accent: 150 85% 45%;
+    --accent-foreground: 220 20% 4%;
+
+    /* Destructive Actions */
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and Inputs */
+    --border: 220 20% 15%;
+    --input: 220 25% 8%;
+    --ring: 150 100% 53%;
+
+    /* Gaming Design Tokens */
+    --neon-green: 150 100% 53%;
+    --neon-green-glow: 150 100% 65%;
+    --dark-surface: 220 25% 6%;
+    --darker-surface: 220 20% 4%;
+    
+    /* Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(150 100% 53%), hsl(150 85% 65%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 25% 6%), hsl(220 20% 4%));
+    --gradient-glow: radial-gradient(circle, hsl(150 100% 53% / 0.3), transparent 70%);
+    
+    /* Shadows */
+    --shadow-neon: 0 0 20px hsl(150 100% 53% / 0.5);
+    --shadow-card: 0 8px 32px hsl(220 20% 2% / 0.8);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --radius: 0.625rem;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}

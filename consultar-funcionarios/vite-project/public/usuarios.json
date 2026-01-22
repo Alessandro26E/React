@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "nome": "pedro lima de santos",
+        "email": "pedro@gmail.com",
+        "salario": 1943,
+        "cargo": "Estagiario"
+    },
+    {
+        "id": 2,
+        "nome": "maria santos ferreira",
+        "email": "maria@gmail.com",
+        "salario": 1545,
+        "cargo": "Junior"
+    },
+    {
+        "id": 3,
+        "nome": "julia",
+        "email": "julia@gmail.com",
+        "salario": 2531,
+        "cargo": "Junior"
+    },
+    {
+        "id": 4,
+        "nome": "marcos silva",
+        "email": "marcossilva@gmail.com",
+        "salario": 15075,
+        "cargo": "Ceo"
+    },
+    {
+        "id": 5,
+        "nome": "Robert Ferreira",
+        "email": "robertferreira@gmail.com",
+        "salario": 15075,
+        "cargo": "Ceo"
+    },
+    {
+        "id": 6,
+        "nome": "lucas almeida",
+        "email": "lucasalmeida@gmail.com",
+        "salario": 2870,
+        "cargo": "Pleno"
+    },
+    {
+        "id": 7,
+        "nome": "ana paula dias",
+        "email": "anapaula@gmail.com",
+        "salario": 3120,
+        "cargo": "Pleno"
+    },
+    {
+        "id": 8,
+        "nome": "fernando rocha",
+        "email": "fernandorocha@gmail.com",
+        "salario": 1345,
+        "cargo": "Estagiario"
+    },
+    {
+        "id": 9,
+        "nome": "camila martins",
+        "email": "camilamartins@gmail.com",
+        "salario": 2100,
+        "cargo": "Junior"
+    },
+    {
+        "id": 10,
+        "nome": "thiago menezes",
+        "email": "thiagomenezes@gmail.com",
+        "salario": 8450,
+        "cargo": "Senior"
+    },
+    {
+        "id": 11,
+        "nome": "aline souza",
+        "email": "alinesouza@gmail.com",
+        "salario": 8200,
+        "cargo": "Senior"
+    },
+    {
+        "id": 12,
+        "nome": "carlos eduardo",
+        "email": "carloseduardo@gmail.com",
+        "salario": 1450,
+        "cargo": "Estagiario"
+    },
+    {
+        "id": 13,
+        "nome": "renata castro",
+        "email": "renatacastro@gmail.com",
+        "salario": 3280,
+        "cargo": "Pleno"
+    },
+    {
+        "id": 14,
+        "nome": "daniel moraes",
+        "email": "danielmoraes@gmail.com",
+        "salario": 4000,
+        "cargo": "Pleno"
+    },
+    {
+        "id": 15,
+        "nome": "jorge henrique",
+        "email": "jorgehenrique@gmail.com",
+        "salario": 2890,
+        "cargo": "Junior"
+    },
+    {
+        "id": 16,
+        "nome": "isabela vieira",
+        "email": "isabelavieira@gmail.com",
+        "salario": 9750,
+        "cargo": "Senior"
+    },
+    {
+        "id": 17,
+        "nome": "rafael barros",
+        "email": "rafaelbarros@gmail.com",
+        "salario": 15890,
+        "cargo": "Diretor"
+    },
+    {
+        "id": 18,
+        "nome": "lara nascimento",
+        "email": "laranascimento@gmail.com",
+        "salario": 1410,
+        "cargo": "Estagiario"
+    },
+    {
+        "id": 19,
+        "nome": "gustavo oliveira",
+        "email": "gustavooliveira@gmail.com",
+        "salario": 3050,
+        "cargo": "Pleno"
+    },
+    {
+        "id": 20,
+        "nome": "patricia brito",
+        "email": "patriciabrito@gmail.com",
+        "salario": 8800,
+        "cargo": "Senior"
+    }
+]
