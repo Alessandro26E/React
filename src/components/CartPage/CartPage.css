@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    --font_Roboto: "Roboto Mono", monospace;
+    --font_Inter: "Inter", sans-serif;
+}
+
+.cart-container {
+    width: 400px;
+    height: 92.2%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    right: 0;
+    top: 7.8%;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-container > h1 {
+    font-family: var(--font_Inter);
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-product-box {
+    width: 100%;
+    height: 93%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+}
