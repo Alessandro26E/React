@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "titulo": "Smartphone Samsung Galaxy A54 128GB",
+    "descricao": "Tela 6.4\", 6GB RAM, Câmera Tripla, Processador Octa-Core.",
+    "preco": 1599.90,
+    "categoria": "Celulares",
+    "imagem": "https://i.imgur.com/nV6E1bGl.jpg",
+    "avaliacao": 4.8,
+    "freteGratis": true,
+    "estoque": 25
+  },
+  {
+    "id": 2,
+    "titulo": "Notebook Lenovo IdeaPad 3i 256GB SSD",
+    "descricao": "Intel i5 10ª geração, 8GB RAM, Tela 15.6\" Full HD.",
+    "preco": 2499.00,
+    "categoria": "Informática",
+    "imagem": "https://i.imgur.com/BXJ1Qh2l.jpg",
+    "avaliacao": 4.5,
+    "freteGratis": false,
+    "estoque": 10
+  },
+  {
+    "id": 3,
+    "titulo": "Fone de Ouvido Bluetooth JBL Tune 510BT",
+    "descricao": "40 horas de bateria, carregamento rápido, conexão estável.",
+    "preco": 199.90,
+    "categoria": "Áudio",
+    "imagem": "https://i.imgur.com/4ZQZ4Z8l.jpg",
+    "avaliacao": 4.7,
+    "freteGratis": true,
+    "estoque": 40
+  },
+  {
+    "id": 4,
+    "titulo": "Teclado Mecânico Redragon Kumara RGB",
+    "descricao": "Switch Outemu Blue, luz RGB, alta durabilidade.",
+    "preco": 189.90,
+    "categoria": "Periféricos",
+    "imagem": "https://i.imgur.com/Df2j5kcl.jpg",
+    "avaliacao": 4.9,
+    "freteGratis": true,
+    "estoque": 15
+  },
+  {
+    "id": 5,
+    "titulo": "Cadeira Gamer ThunderX3 TGC12",
+    "descricao": "Ergonômica, reclinável, ajuste de altura, apoio de braço 2D.",
+    "preco": 999.00,
+    "categoria": "Móveis",
+    "imagem": "https://i.imgur.com/nV6E1bGl.jpg",
+    "avaliacao": 4.6,
+    "freteGratis": false,
+    "estoque": 8
+  }
+]

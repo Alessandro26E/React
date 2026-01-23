@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@keyframes imgAnim {
+  0% {
+    background-size: 230px 230px;
+  }
+
+  100% {
+    background-size: 250px 250px;
+  }
+}
+
+@keyframes imgAnim2 {
+  0% {
+    background-size: 250px 250px;
+  }
+
+  100% {
+    background-size: 230px 230px;
+  }
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(34, 34, 34);
+}
+
+.main-container {
+  cursor: pointer;
+  margin: 10px;
+  width: 220px;
+  height: 300px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  box-shadow: rgba(85, 85, 85, 0.24) 0px 3px 8px;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-image: url("https://pbs.twimg.com/media/Go6rUyhXgAAvWZi?format=jpg&name=large");
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 220px;
+    background-size: 230px 230px;
+    animation-name: imgAnim2;
+    animation-duration: 0.5s;
+    animation-direction: out;
+  }
+
+  h1 {
+    background-color: rgb(29, 29, 29);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: "Montserrat";
+  }
+
+  button {
+    background-color: rgb(26, 124, 42);
+    color: white;
+    height: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: rgb(3, 192, 34);
+    font-size: 18px;
+  }
+}
+
+.main-container:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.04);
+  box-shadow: rgba(21, 247, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+  img {
+    animation-name: imgAnim;
+    animation-duration: 0.8s;
+    animation-direction: out;
+    animation-fill-mode: forwards;
+  }
+}

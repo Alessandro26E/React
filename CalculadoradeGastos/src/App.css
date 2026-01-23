@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+input::placeholder {
+  color: white;
+  font-weight: 500;
+}
+
+button:hover {
+  transform: scale(1.05);
+
+}

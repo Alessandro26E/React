@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+
+#selectCategory {
+    border: none;
+
+    option {
+        background-color: rgb(31, 31, 31);
+        border-radius: 10px;
+        color: white;
+        font-size: 13px;
+    }
+}
