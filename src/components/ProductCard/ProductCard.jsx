@@ -2,10 +2,20 @@ import './ProductCard.css'
 import { FaCartPlus } from 'react-icons/fa'
 import { FaStar } from 'react-icons/fa'
 import formatNuber from '../../utils/formatNumber'
+import { useContext } from 'react'
+import AppContext from '../contexts/UserContext'
 
-function ProductCard ({ thumbnail, productTitle, productPrice, productRating }) {
+function ProductCard ( props ) {
+    const { productKey, thumbnail, productTitle, productPrice, productRating } = props
+    const { cartProdutos, setcartProdutos } = useContext(AppContext)
+
+    const addCartProduct = () => {
+        setcartProdutos([...cartProdutos, props])
+        console.log(cartProdutos)
+    }
+
     return (
-        <div className='card-container'>
+        <div key={productKey} onClick={addCartProduct} className='card-container'>
             <img src={thumbnail} alt="Product_Thumbnail" />
             <h1>{productTitle}</h1>
             <p>{formatNuber(productPrice)}</p>

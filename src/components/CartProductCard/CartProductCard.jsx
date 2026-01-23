@@ -1,15 +1,25 @@
 import './CartProductCard.css'
 import { FaTrash } from 'react-icons/fa'
-function CartProductCart () {
+import formatNumber from '../../utils/formatNumber'
+import { useContext } from 'react'
+import AppContext from '../contexts/UserContext'
 
+function CartProductCart ( props ) {
+    const { productTitle, productPrice, thumbnail, productKey } = props
+    const { cartProdutos, setcartProdutos } = useContext(AppContext)
+
+    function removeCartProduct(key) {
+        const updateCartProduct = cartProdutos.filter((product) => product.productKey !== key)
+        setcartProdutos(updateCartProduct)
+    }
     return (
-        <div className='cart-product-card-container'>
-            <img src="Product_Thumbnail" src="https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/thumbnail.webp"/>
+        <div key={productKey} className='cart-product-card-container'>
+            <img src={thumbnail} />
             <div className='product-info-box'>
-                <h1>Iphone 17 PRO MAX 256GB 2026</h1>
-                <p>R$0,00</p>
+                <h1>{productTitle}</h1>
+                <p>{formatNumber(Number(productPrice))}</p>
             </div>
-            <button> <FaTrash/> </button>
+            <button onClick={() => removeCartProduct(productKey)}> <FaTrash/> </button>
         </div>
     )
 }

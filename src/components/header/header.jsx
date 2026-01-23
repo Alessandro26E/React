@@ -6,14 +6,23 @@ import { IoIosSearch } from 'react-icons/io'
 import ProductCard from '../ProductCard/ProductCard';
 import CartPage
  from '../CartPage/CarTPage';
+
+import userContext from '../contexts/UserContext'; 
+
 function Header( ) {
     const [search, setSearch] = useState('')
     const [produtos, setProdutos] = useState([])
+    const [cartProdutos, setcartProdutos] = useState([])
+    const [cartVisible, setcartVisible] = useState(false)
 
     return (
+      <userContext.Provider value={{ produtos, setProdutos, cartProdutos, setcartProdutos, setcartVisible, cartVisible }}>
+
+      
       <div className="box-container">
 
         <CartPage/>
+        
         
         <div className="container">
           <form onSubmit={async (event) => {
@@ -40,8 +49,8 @@ function Header( ) {
 
         <div className="product-container">
           {produtos.map((produto) =>  (
-            <ProductCard 
-            key={produto.id}
+            <ProductCard
+            productKey={produto.id}
             thumbnail={produto.thumbnail} 
             productTitle={produto.title}
             productPrice={produto.price}
@@ -51,7 +60,9 @@ function Header( ) {
             ))}
         </div>
         
+        
       </div>
+      </userContext.Provider>
     );
 }
 
