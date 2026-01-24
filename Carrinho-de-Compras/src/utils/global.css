@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    /* FONTES */
+    --Font-Inter: "Inter", sans-serif;
+    --Font-Roboto: "Roboto", sans-serif;
+
+    /* Colors */
+    --ml-yellow: #FFE600;
+    --ml-blue: #2D3277;
+    --ml-black: #000000;
+    --ml-white: #ffffff;
+    --ml-gray-light: #f5f5f5;
+    --ml-gray-dark: #333333;
+}
