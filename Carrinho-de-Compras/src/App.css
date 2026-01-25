@@ -4,10 +4,13 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .box-container {
     background-color: rgb(214, 214, 214);
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
 }

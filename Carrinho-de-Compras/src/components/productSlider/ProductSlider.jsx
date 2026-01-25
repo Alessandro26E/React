@@ -5,12 +5,12 @@ function ProductSlider() {
     const [activeSlider, setActiveSlider] = useState(1)
 
     useEffect(() => {
-    const interval = setInterval(() => {
-        setActiveSlider((prev) => (prev === 4 ? 1 : prev + 1));
-    }, 3000);
+        const interval = setInterval(() => {
+            setActiveSlider((prev) => (prev === 4 ? 1 : prev + 1));
+        }, 3000);
 
-    return () => clearInterval(interval);
-}, []);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div className='slider-container'>
