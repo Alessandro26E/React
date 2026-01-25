@@ -8,6 +8,11 @@
 
 .products-box {
     width: 100%;
-    height: 95%;
-    background-color: rgb(255, 0, 0);
+    height: 95%;;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 350px);
+    gap: 10px;
+    overflow-y: auto;
+    padding: 10px;
 }

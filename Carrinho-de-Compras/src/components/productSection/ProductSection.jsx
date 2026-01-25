@@ -1,24 +1,24 @@
 import './ProductSection.css'
+import ProductCard from '../productCard/productCard';
+
+import AppContext from '../../contexts/AppContext';
+import { useContext, useEffect, useState } from 'react';
+import { RiCoreosLine } from 'react-icons/ri';
 
 function ProductSection () {
 
-   const getProducts = async (query) => {
-
-    try {
-        const resp = await fetch(`https://dummyjson.com/products/search?q=${query}`)
-        const data = await resp.json()
-
-        console.log(data)
-    } catch( err ) {
-        console.log("Erro de CORS ou rede", err)
-    }
-
-   };
+    const { produtos } = useContext(AppContext)
+    
+    useState(() => {
+        console.log(produtos)
+    },[produtos])
 
     return (
         <div className='product-container'>
             <div className='products-box'>
-                
+                {produtos.map((item) => 
+                    <ProductCard productKey={item.id} title={item.title} price={item.price} thumbnail={item.thumbnail} rating={item.rating} />
+                )}
             </div>
         </div>
     )
