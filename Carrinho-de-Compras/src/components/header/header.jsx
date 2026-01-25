@@ -4,12 +4,12 @@ import { FaShoppingCart } from 'react-icons/fa'
 
 import FetchApi from '../../Api/FetchApi'
 import AppContext from '../../contexts/AppContext'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 
 function Header() {
     
-  const { produtos, setProdutos, search, setSearch } = useContext(AppContext)
-  console.log(search)
+  const { cartProducts, setProdutos, search, setSearch, cartVisible, setCartVisible} = useContext(AppContext)
+  
   return (
     <div className='container'>
         <div className='main-container'>
@@ -27,7 +27,7 @@ function Header() {
             <button><IoIosSearch/> </button>
             </form>
 
-            <button className='cart-btn'> <FaShoppingCart /> </button>
+            <button onClick={() => setCartVisible(!cartVisible)} className='cart-btn'> <FaShoppingCart /> <span>{cartProducts.length}</span> </button>
         </div>
     </div>
   )

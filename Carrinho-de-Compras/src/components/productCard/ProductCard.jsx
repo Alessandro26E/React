@@ -3,10 +3,15 @@ import { FaStar } from 'react-icons/fa'
 import { SlEnergy } from 'react-icons/sl'
 import { FaCartPlus } from 'react-icons/fa'
 
+import AppContext from '../../contexts/AppContext'
+import { useContext } from 'react'
+
 function ProductCard ( props ) {
 
     const { productKey, title, price, thumbnail, rating } = props
+    const { cartProducts, setCartProducts } = useContext(AppContext)
 
+    const addCartProduct = () => setCartProducts([ ...cartProducts, props ]);
 
     return (
         <div key={productKey} className='card-container'>
@@ -28,7 +33,7 @@ function ProductCard ( props ) {
 
             </div>
 
-            <button id='cart-btn'> <FaCartPlus /> </button>
+            <button onClick={addCartProduct} id='cart-btn'> <FaCartPlus /> </button>
         </div>
     )
 }
