@@ -13,11 +13,13 @@
     height: 65px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 15px;
 }
 
 .main-container > img {
     width: 150px;
-    height: 50px;
+    height: 40px;
 }
 
 .search-container {
@@ -38,13 +40,10 @@
     font-size: 1rem;
     color: var(--ml-gray-dark);
     box-shadow: 1px 0px 0px rgba(0,0,0,0.2);
-
-    
 }
 
 .search-container:focus-within {
-    border: solid 1px var(--ml-blue);
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 24px;
 }
 
 .search-container > button {
@@ -58,4 +57,25 @@
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.cart-btn {
+    font-size: 1.1rem;
+    color: var(--ml-gray-dark);
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms ease;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.cart-btn:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+    
 }
