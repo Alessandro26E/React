@@ -15,7 +15,7 @@ function Cart() {
       const valorTotal = cartProducts.reduce((acc, item) => acc + item.price,0,);
       setTotal(valorTotal);
     }
-
+    console.log("Oi")
     useEffect(() => {
         calcuTotal()
     }, [cartProducts])
