@@ -3,6 +3,7 @@
     height: 65px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .cart-product-container > img {
@@ -32,4 +33,14 @@
     border: none;
     background: none;
     cursor: pointer;
+}
+
+#quantity_Text {
+    font-weight: 600;
+    font-size: 0.8rem;
+    background-color: rgb(221, 221, 221);
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    padding: 2px;
 }

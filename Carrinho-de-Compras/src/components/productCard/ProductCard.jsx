@@ -13,7 +13,6 @@ function ProductCard ( props ) {
 
     function addProductHandle (productId) {
         const productInCart = cartProducts.find((item) => item.productKey === productId)
-        console.log(productInCart)
         
         if (productInCart) {
             setCartProducts(

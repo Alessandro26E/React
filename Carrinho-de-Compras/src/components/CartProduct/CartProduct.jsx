@@ -11,7 +11,13 @@ function CartProduct ( props ) {
     const { cartProducts, setCartProducts } = useContext(AppContext)
 
     function cartRemoveHandle(itemId) {
-        return setCartProducts(cartProducts.filter((item) => item.productKey !== itemId ))
+        const productInCart = cartProducts.find((item) => item.productKey === itemId)
+        
+        if (productInCart.quantity > 1) {
+            setCartProducts(cartProducts.map((item) => item.productKey === itemId ? {...item, quantity: item.quantity - 1} : item))
+        } else {
+            return setCartProducts(cartProducts.filter((item) => item.productKey !== itemId))
+        }
     }
 
     return (
@@ -21,7 +27,7 @@ function CartProduct ( props ) {
                 <h1>{title}</h1>
                 <p>{`R$ ${formatNumber(price)}`}</p>
             </div>
-            <p>{`x${quantity}`}</p>
+            <p id='quantity_Text'>{`x${quantity}`}</p>
             <button onClick={() => cartRemoveHandle(productKey)}> <BsCartXFill /> </button>
         </div>
     )
