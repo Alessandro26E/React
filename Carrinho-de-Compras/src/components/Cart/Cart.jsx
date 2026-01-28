@@ -16,6 +16,10 @@ function Cart() {
       setTotal(valorTotal);
     }
 
+    useEffect(() => {
+        calcuTotal()
+    },[cartProducts])
+
     console.log(cartProducts)
 
 

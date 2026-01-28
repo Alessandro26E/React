@@ -8,7 +8,7 @@ import { useContext } from 'react'
 
 function Header() {
     
-  const { setProdutos, search, setSearch, cartVisible, setCartVisible} = useContext(AppContext)
+  const { cartProducts, setProdutos, search, setSearch, cartVisible, setCartVisible} = useContext(AppContext)
   
   return (
     <div className='container'>
@@ -27,7 +27,7 @@ function Header() {
             <button><IoIosSearch/> </button>
             </form>
 
-            <button onClick={() => setCartVisible(!cartVisible)} className='cart-btn'> <FaShoppingCart /> <span>{'0'}</span> </button>
+            <button onClick={() => setCartVisible(!cartVisible)} className='cart-btn'> <FaShoppingCart /> <span>{cartProducts.length}</span> </button>
         </div>
     </div>
   )

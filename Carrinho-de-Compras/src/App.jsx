@@ -1,6 +1,6 @@
 import './App.css';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Header from './components/header/header';
 import ProductSlider from './components/productSlider/ProductSlider'
@@ -15,6 +15,12 @@ function App() {
   const [cartProducts, setCartProducts] = useState([]);
   const [cartVisible, setCartVisible] = useState(false)
 
+  useEffect(() => {
+    if (cartProducts.length > 0) {
+      localStorage.setItem('products', JSON.stringify(cartProducts))
+    }
+    
+  }, [cartProducts])
   return (
     <AppContext.Provider
       value={{

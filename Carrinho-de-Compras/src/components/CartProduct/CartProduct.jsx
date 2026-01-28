@@ -20,7 +20,7 @@ function CartProduct ( props ) {
             <div className='title-div'>
                 <h1>{title}</h1>
                 <p>{`R$ ${formatNumber(price)}`}</p>
-            </div>0
+            </div>
             <button onClick={() => cartRemoveHandle(productKey)}> <BsCartXFill /> </button>
         </div>
     )

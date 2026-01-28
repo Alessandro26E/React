@@ -7,11 +7,17 @@ import { RiCoreosLine } from 'react-icons/ri';
 
 function ProductSection () {
 
-    const { produtos } = useContext(AppContext)
+    const { setCartProducts, cartProducts, produtos } = useContext(AppContext)
     
-    useState(() => {
-        console.log(produtos)
-    },[produtos])
+    useEffect(() => {
+        const storageProducts = localStorage.getItem('products')
+        
+        if (storageProducts) {
+            setCartProducts(JSON.parse(storageProducts))
+        }
+    },[])
+
+    
 
     return (
         <div className='product-container'>
