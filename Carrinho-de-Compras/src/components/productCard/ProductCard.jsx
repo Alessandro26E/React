@@ -11,8 +11,9 @@ function ProductCard ( props ) {
     const { productKey, title, price, thumbnail, rating } = props
     const { cartProducts, setCartProducts } = useContext(AppContext)
 
-    const addCartProduct = () => setCartProducts([ ...cartProducts, props ]);
-
+    function addProductHandle () {
+        setCartProducts([...cartProducts, props])
+    }
     return (
         <div key={productKey} className='card-container'>
             <img src={thumbnail} />
@@ -33,7 +34,7 @@ function ProductCard ( props ) {
 
             </div>
 
-            <button onClick={addCartProduct} id='cart-btn'> <FaCartPlus /> </button>
+            <button onClick={addProductHandle} id='cart-btn'> <FaCartPlus /> </button>
         </div>
     )
 }

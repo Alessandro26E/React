@@ -15,10 +15,9 @@ function Cart() {
       const valorTotal = cartProducts.reduce((acc, item) => acc + item.price,0,);
       setTotal(valorTotal);
     }
-    console.log("Oi")
-    useEffect(() => {
-        calcuTotal()
-    }, [cartProducts])
+
+    console.log(cartProducts)
+
 
     return (
         <div className={`cart-container ${cartVisible ? "cart-container--active" : ''}`}>
@@ -27,7 +26,7 @@ function Cart() {
             </div>
 
             <div className='infos-div'>
-                {cartProducts.map((item) => <CartProduct productKey={item.productKey} title={item.title} price={item.price} thumbnail={item.thumbnail} />)}
+                {cartProducts ? cartProducts.map((item) => <CartProduct productKey={item.productKey} title={item.title} price={item.price} thumbnail={item.thumbnail} />) : cartProducts}
             </div>
 
             <div className='footer-div'>

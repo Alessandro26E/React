@@ -10,10 +10,8 @@ function CartProduct ( props ) {
 
     const { cartProducts, setCartProducts } = useContext(AppContext)
 
-    function cartRemoveProduct(itemId) {
-        console.log(itemId)
-        const newCartList = cartProducts.filter((item) => item.productKey !== itemId)
-        setCartProducts(newCartList)
+    function cartRemoveHandle(itemId) {
+        return setCartProducts(cartProducts.filter((item) => item.productKey !== itemId ))
     }
 
     return (
@@ -22,8 +20,8 @@ function CartProduct ( props ) {
             <div className='title-div'>
                 <h1>{title}</h1>
                 <p>{`R$ ${formatNumber(price)}`}</p>
-            </div>
-            <button onClick={() => cartRemoveProduct(productKey)}> <BsCartXFill /> </button>
+            </div>0
+            <button onClick={() => cartRemoveHandle(productKey)}> <BsCartXFill /> </button>
         </div>
     )
 }
