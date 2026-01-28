@@ -23,7 +23,7 @@ function ProductSection () {
         <div className='product-container'>
             <div className='products-box'>
                 {produtos.map((item) => 
-                    <ProductCard productKey={item.id} title={item.title} price={item.price} thumbnail={item.thumbnail} rating={item.rating} />
+                    <ProductCard productKey={item.id} title={item.title} price={item.price} thumbnail={item.thumbnail} rating={item.rating} quantity={1} />
                 )}
             </div>
         </div>

@@ -6,7 +6,7 @@ import { useContext } from 'react'
 
 function CartProduct ( props ) {
 
-    const { productKey, title, price, thumbnail } = props
+    const { productKey, title, price, thumbnail, quantity } = props
 
     const { cartProducts, setCartProducts } = useContext(AppContext)
 
@@ -21,6 +21,7 @@ function CartProduct ( props ) {
                 <h1>{title}</h1>
                 <p>{`R$ ${formatNumber(price)}`}</p>
             </div>
+            <p>{`x${quantity}`}</p>
             <button onClick={() => cartRemoveHandle(productKey)}> <BsCartXFill /> </button>
         </div>
     )

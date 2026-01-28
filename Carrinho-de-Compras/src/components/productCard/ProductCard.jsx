@@ -11,8 +11,17 @@ function ProductCard ( props ) {
     const { productKey, title, price, thumbnail, rating } = props
     const { cartProducts, setCartProducts } = useContext(AppContext)
 
-    function addProductHandle () {
-        setCartProducts([...cartProducts, props])
+    function addProductHandle (productId) {
+        const productInCart = cartProducts.find((item) => item.productKey === productId)
+        console.log(productInCart)
+        
+        if (productInCart) {
+            setCartProducts(
+                cartProducts.map((item) => item.productKey === productId ? {...item, quantity: item.quantity + 1} : item)
+            )
+        } else {
+            setCartProducts([...cartProducts, props])
+        }
     }
     return (
         <div key={productKey} className='card-container'>
@@ -34,7 +43,7 @@ function ProductCard ( props ) {
 
             </div>
 
-            <button onClick={addProductHandle} id='cart-btn'> <FaCartPlus /> </button>
+            <button onClick={() => addProductHandle(productKey)} id='cart-btn'> <FaCartPlus /> </button>
         </div>
     )
 }
