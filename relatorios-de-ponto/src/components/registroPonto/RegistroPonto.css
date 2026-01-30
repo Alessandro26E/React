@@ -1,0 +1,191 @@
+.registro-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-hora {
+    background-color: rgb(255, 255, 255);
+    width: 700px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--Font-Inter);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.div-hora > h1 {
+    font-weight: 800;
+    font-size: 4rem;
+}
+
+.div-hora > p {
+    color: rgb(126, 126, 126);
+    font-weight: 600;
+    font-size: 1.1rem;
+} 
+
+.status-div {
+    width: 700px;
+    height: 70px;
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--Font-Inter);
+}
+
+.text-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 250px;
+    gap: 10px;
+}
+
+.text-div > h1 {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+#circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+}
+
+.ultimaAcao-div {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ultimaAcao-div > h1 {
+    font-size: 1rem;
+    color: rgb(112, 112, 112);
+    font-weight: 500;
+}
+
+.buttons-container {
+    width: 700px;
+    height: 150px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.buttons-container > button {
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-family: var(--Font-Inter);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: all 600ms ease;
+}
+
+.buttons-container > button:hover:nth-child(1) {
+  box-shadow: 0 2px 6px rgb(3, 223, 252);
+}
+
+
+.buttons-container > button:nth-child(1) {
+    background: #00a196;
+    background: linear-gradient(148deg, rgba(0, 161, 150, 1) 0%, rgba(69, 252, 182, 1) 100%);
+    color: white;
+}
+
+.buttons-container > button:nth-child(2) {
+    background-color: rgb(252, 28, 28);
+    color: white;
+}
+
+.buttons-container > button:hover:nth-child(2) {
+  box-shadow: 0 2px 6px rgb(252, 28, 28);
+}
+
+.buttons-container > button:nth-child(3) {
+    background-color: rgb(255, 174, 0);
+    color: white;
+    height: 50px;
+}
+
+.buttons-container > button:hover:nth-child(3) {
+  box-shadow: 0 2px 6px rgb(255, 174, 0);
+}
+
+.buttons-container > button:nth-child(4) {
+    background-color: rgb(46, 46, 46);
+    color: rgb(255, 255, 255);
+    height: 50px;
+}
+
+.buttons-container > button:hover:nth-child(4) {
+  box-shadow: 0 2px 6px rgb(46, 46, 46);
+}
+
+.resumo-container {
+    background-color: white;
+    width: 700px;
+    height: 170px;
+    border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    font-family: var(--Font-Inter);
+    display: flex;
+    flex-direction: column;
+}
+
+.resumo-container > h1 {
+    font-size: 1rem;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+.box-container {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tempo-div {
+    background-color: rgb(230, 230, 227);
+    height: 85px;
+    width: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    
+}
+
+.tempo-div > h1 {
+    font-size: 1.6rem;
+}
+
+.tempo-div > p {
+    color: rgb(109, 108, 106);
+    font-size: 0.9rem;
+}
