@@ -61,6 +61,7 @@
     width: 15px;
     height: 15px;
     border-radius: 15px;
+    background-color: rgb(190, 5, 5);
 }
 
 .ultimaAcao-div {
@@ -170,7 +171,7 @@
 }
 
 .tempo-div {
-    background-color: rgb(230, 230, 227);
+    background-color: rgb(238, 238, 236);
     height: 85px;
     width: 210px;
     display: flex;

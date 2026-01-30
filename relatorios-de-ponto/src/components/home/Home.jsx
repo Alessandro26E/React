@@ -3,6 +3,7 @@ import { FaRegClock  } from 'react-icons/fa'
 import { MdHistory } from "react-icons/md";
 import { HiOutlineDocumentReport } from "react-icons/hi";
 import RegistroPonto from '../registroPonto/RegistroPonto';
+import Historico from '../historico/Historico';
 
 function Home () {
 
@@ -16,7 +17,7 @@ function Home () {
                     </div>
                 </div> 
 
-                <RegistroPonto/>
+                <Historico/>
         </div>
     )
 }
