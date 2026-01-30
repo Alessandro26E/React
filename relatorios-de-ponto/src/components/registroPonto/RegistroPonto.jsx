@@ -11,7 +11,7 @@ function RegistroPonto() {
     useEffect(() => {
         setSeconds(data.getSeconds())
     }, [seconds])
-    
+    console.log("Oi")
     return (
         <div className="registro-container">
             <div className='div-hora'>
