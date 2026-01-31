@@ -1,12 +1,12 @@
 .historico-div {
     width: 100%;
     height: 100%;
-    display: flex;
     align-items: center;
     font-family: var(--Font-Inter);
     flex-direction: column;
     overflow-y: auto;
     margin-top: 20px;
+    display: flex;
 }
 
 .top-div {

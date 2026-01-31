@@ -7,12 +7,14 @@
 body {
   width: 100vw;
   height: 100vh;
+   overflow-x: hidden;
 }
 
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
   background-color: rgb(233, 233, 233);
   display: flex;
   flex-direction: column;
+
 }

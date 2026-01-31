@@ -1,0 +1,314 @@
+.relatorio-div {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-title-relatorios {
+    width: 100%;
+    height: 70px;
+    font-family: var(--Font-Inter);
+    padding: 10px;
+    display: flex;
+    margin-left: 420px;
+    flex-direction: column;
+}
+
+.div-title-relatorios > h1 {
+    font-size: 1.5rem;
+}
+
+
+.div-title-relatorios > p {
+    font-size: 0.9rem;
+}
+
+.box-div-relatorios {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.box-card {
+    width: 200px;
+    height: 130px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-left: 5px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-box-top {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.card-box-top > span {
+    background-color: rgba(61, 159, 250, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: rgba(0, 132, 255, 1);
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.card-box-top > h1 {
+    font-family: var(--Font-Inter);
+    font-size: 0.8rem;
+    padding-left: 10px;
+    font-weight: 500;
+    color: rgb(145, 145, 145);
+    margin-top: 5px;
+}
+
+.box-card > h1 {
+    font-size: 1.6rem;
+    font-family: var(--Font-Inter);
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.box-card > p {
+    font-family: var(--Font-Inter);
+    font-size: 0.8rem;
+    margin-left: 10px;
+    color: rgb(114, 114, 114);
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+#text-one {
+    color: rgb(0, 151, 20);
+}
+
+#graphic-box > span {
+    background-color: rgba(0, 151, 20,0.2);;
+    color: rgb(0, 151, 20);
+}
+
+#diaria-box > span {
+    background-color: rgba(255, 217, 0, 0.2);
+    color: rgb(255, 166, 1);
+}
+
+#dias-box > span{
+    background-color: rgba(0, 151, 20,0.2);;
+    color: rgb(5, 190, 30);
+}
+
+.gerar-container {
+    width: 850px;
+    height: 300px;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 10px;
+}   
+
+.title-div {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#title-gerar {
+    font-family: var(--Font-Inter);
+    font-size: 1.2rem;
+    padding-left: 10px;
+    color: rgb(31, 31, 31);
+}
+
+.periodo-div {
+    width: 100%;
+    height: 200px;
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.periodo-card {
+    width: 400px;
+    height: 110px;
+}
+
+.periodo-card > h1 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: var(--Font-Inter);
+    padding-left: 15px;
+}
+
+.box-periodo {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 10px;
+}
+
+.date-card > p {
+    font-family: var(--Font-Inter);
+    font-size: 0.8rem;
+    color: rgb(107, 107, 107);
+    margin-bottom: 5px;
+}
+
+.date-card > input {
+    font-family: var(--Font-Inter);
+    padding: 6px;
+    width: 180px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid rgb(207, 207, 207);
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+    outline: none;
+}
+
+.date-card > input:focus {
+    border: 2px solid rgb(0, 140, 255);
+}
+
+.type-card {
+    width: 400px;
+    height: 110px;
+    background-color: red;
+}
+
+.tipo-div-card {
+    width: 400px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tipo-div-card > h1 {
+    font-size: 1rem;
+    font-family: var(--Font-Inter);
+}
+
+.box-type {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.box-type > select {
+    font-family: var(--Font-Inter);
+    padding: 6px;
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid rgb(207, 207, 207);
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+    outline: none;
+    font-size: 1rem;
+    margin-left: 2px;
+
+}
+
+.formato-div {
+    width: 400px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formato-div > h1 {
+    font-family: var(--Font-Inter);
+    font-size: 1rem;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.formato-div > select {
+    font-family: var(--Font-Inter);
+    padding: 6px;
+    width: 97%;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid rgb(207, 207, 207);
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+    outline: none;
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.incluir-div {
+    width: 400px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+}
+
+.incluir-div > h1 {
+    font-family: var(--Font-Inter);
+    font-size: 1rem;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.checkbox-div {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-div > h1 {
+    font-family: var(--Font-Inter);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding-left: 5px;
+}
+
+.checkbox-div > input[type="checkbox"] {
+  width: 16px;
+  height: 18px;
+ margin-left: 10px;
+}
+
+.relatorios-recentes-div {
+    width: 850px;
+    height: 400px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+}
+
+.relatorios-recentes-div > h1 {
+    font-size: 1rem;
+    font-family: var(--Font-Inter);
+    padding: 10px;
+}
+
+.scroll-div-relatorios-recentes {
+    width: 100%;
+    height: 330px;
+    background-color: rgb(233, 233, 233);
+     
+}

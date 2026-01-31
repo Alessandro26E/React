@@ -5,18 +5,37 @@ import { LuCoffee } from "react-icons/lu";
 import { FaRegClock  } from 'react-icons/fa'
 
 function RegistroPonto() {
-    const [seconds, setSeconds] = useState(null)
-    const data = new Date()
+
+    const [time, setTime] = useState(new Date())
 
     useEffect(() => {
-        setSeconds(data.getSeconds())
-    }, [seconds])
-    
+        const timer = setInterval(() => { setTime(new Date()) }, 1000);
+        return () => clearInterval(timer)
+    },[])
+
+    const formatTimer = (date) => {
+        return date.toLocaleTimeString('pt-BR', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        }) 
+    }
+
+    const formatData = (date) => {
+        return date.toLocaleDateString('pt-BR', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })
+    }
+
     return (
         <div className="registro-container">
             <div className='div-hora'>
-                <h1>{`${data.getHours()}:${data.getMinutes()}:${seconds}`}</h1>
-                <p>quinta-feira, 29 de janeiro de 2026</p>
+                <h1>{formatTimer(time)}</h1>
+                <p>{formatData(time)}</p>
             </div>
 
             <div className='status-div'>
