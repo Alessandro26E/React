@@ -17,19 +17,23 @@ function Historico() {
         <div className="top-div">
           <h1>Histórico de Ponto</h1>
           <p>
-            {" "}
             <CiCalendar id="calendar" /> Ultimos 30 dias
           </p>
         </div>
         <div className="cards-div">
           {registros.map((item) => (
-            <CardHistory
-              horaInicio={item.HorarioInicio}
-              horaSaida={item.HorarioSaida}
-              inicioIntervalo={item.HorarioIntervalo}
-              saidaIntervalo={item.SaidaIntervalo}
-              total={item.Total}
-            />
+            
+              <CardHistory key={item.Id}
+                horaInicio={item.HorarioInicio}
+                horaSaida={item.HorarioSaida}
+                inicioIntervalo={item.HorarioIntervalo}
+                saidaIntervalo={item.SaidaIntervalo}
+                Data={item.Data}
+                TotalIntervalo={item.TotalIntervalo}
+                Id={item.Id}
+                TotalTrabalho={item.TotalTrabalho}
+              />
+            
           ))}
 
         </div>

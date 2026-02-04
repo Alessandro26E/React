@@ -106,6 +106,7 @@
 #clockText {
     color: rgb(0, 162, 255);
     font-weight: 700;
+    font-size: 0.84rem;
 }
 
 .history-status-div {

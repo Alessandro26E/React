@@ -4,10 +4,15 @@ import { RxExit } from "react-icons/rx";
 import { LuCoffee } from "react-icons/lu";
 import { FaRegClock  } from 'react-icons/fa'
 import { IoCalendarClearOutline } from "react-icons/io5";
+import { useEffect } from 'react';
 
 function CardHistory ( props ) {
 
-    const { horaInicio, horaSaida, inicioIntervalo, saidaIntervalo, total } = props
+    const { horaInicio, horaSaida, inicioIntervalo, saidaIntervalo, TotalIntervalo, Data, TotalTrabalho } = props
+
+    useEffect(() => {
+        console.log([TotalTrabalho])
+    },[TotalTrabalho])
 
     return (
         <div className='history-section'>
@@ -17,7 +22,7 @@ function CardHistory ( props ) {
                         <span><IoCalendarClearOutline /></span>
 
                         <div className='info-day'>
-                            <h1>ter., 28 de jan. de 2025</h1>
+                            <h1>{Data}</h1>
                             <p>Dia de Trabalho</p>
                         </div>
                     </div>
@@ -44,7 +49,7 @@ function CardHistory ( props ) {
                             <LuCoffee  id='iconCoffe'/>
                             <div className='hour-div'>
                                 <p>Intervalo</p>
-                                <p>{total}</p>
+                                <p>{TotalIntervalo}</p>
                             </div>
                         </div>
 
@@ -52,7 +57,7 @@ function CardHistory ( props ) {
                             <FaRegClock id='iconClock'/>
                             <div className='hour-div'>
                                 <p>Total</p>
-                                <p id='clockText'>08:30</p>
+                                <p id='clockText'>{TotalTrabalho}</p>
                             </div>
                         </div>
                     </div>

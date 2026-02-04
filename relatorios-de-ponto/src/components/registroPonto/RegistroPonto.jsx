@@ -16,10 +16,16 @@ function RegistroPonto() {
         setSaidaPonto,
         registros,
         setRegistro,
-        Intervalo,
-        setIntervalo,
+        inicioIntervalo,
+        setInicioIntervalo,
+        saidaIntervalo,
+        setSaidaIntervalo,
         total,
-        setTotal
+        setTotal,
+        id,
+        setId,
+        totalTrabalho,
+        setTotalTrabalho
     } = useContext(AppContext)
 
     const [time, setTime] = useState(new Date())
@@ -46,68 +52,129 @@ function RegistroPonto() {
             day: 'numeric'
         })
     }
-    const registrandoHandle = () => {
+
+    const registroData = (date) => {
+        return date.toLocaleDateString('pt-BR', {
+            weekday: 'short',
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        })
+    }
+
+    const registrandoHandle = ( horaSaida, totalIntervalo, totalTrab ) => {
+        setId(prev => prev + 1)
+
         const novoRegistro = {
             HorarioInicio: inicioPonto,
-            HorarioSaida: saidaPonto,
-            Intervalo: Intervalo,
-            Total: total
-
+            HorarioSaida: horaSaida,
+            InicioIntervalo: inicioIntervalo,
+            saidaIntervalo: saidaIntervalo,
+            TotalIntervalo: totalIntervalo,
+            TotalTrabalho: totalTrab,
+            Data: registroData(time),
+            Id: id,
         }
 
         setRegistro(prev => [...prev, novoRegistro])
-        console.log("Registrando novo registro")
     }
 
+    const handleIntervalo = () => {
 
-    useEffect(() => {
-        if (status !== 'idle') return;
+        if (!inicioIntervalo || !saidaIntervalo) return '0s'
 
-        const intervalo = setInterval(() => {
-            setIntervalo(prev => prev + 1);
-        }, 1000);
+        const [horasInicio, minutosInicio, segundosInicio] = inicioIntervalo.split(':').map(Number);
+        const [horasSaida, minutosSaida, segundosSaida] = saidaIntervalo.split(':').map(Number);
+        const totalInicio = (horasInicio * 60) + minutosInicio + (segundosInicio/60)
+        const totalSaida = (horasSaida * 60) + minutosSaida + (segundosSaida/60)
+        const diferenca = totalSaida - totalInicio
+        const Horas = Math.floor(diferenca/60)
+        const Minutos = Math.round(diferenca%60)
+        const SegundosTotais = Math.round(diferenca * 60)
+        const segundos = SegundosTotais % 60 
+        let TempoText = '';
 
-        return () => clearInterval(intervalo);
-    }, [status]);
-
-    const handleTotal = () => {
-        const Horas = Math.floor(total / 3600);
-        const Minutos = Math.floor((total % 3600) / 60);
-        const Segundos = total % 60;
-        
-        if (Horas !== 0) {
-            setTotal(`${Horas}h ${Minutos > 0 ? Minutos : ''}`)
-        }
-        return setTotal()
-    }
- 
-    const handlePonto = ( state ) => {
-        console.log(registros)
-        if (state === 'iniciar' && status == 'off') {
-            setStatus('Working')
-            setInicioPonto(formatTimer(time))
-            
-        } else if (state === 'sair' && status == 'Working') {
-            setSaidaPonto(formatTimer(time))
-            setStatus('off')
-            
-            registrandoHandle()
-
-        } else if (state === 'iniciarIntervalo' && status == 'Working') {
-            setStatus('idle')
-        } else if (state === 'breakIntervalo' && status == 'idle') {
-            setStatus('Working')
+        if (Horas > 0) {
+            TempoText = `${Horas}h ${Minutos}m`
+        } else if (Minutos > 0) {
+            TempoText = `${Minutos}m ${segundos}s`
+        } else {
+            TempoText = `${segundos}s`
         }
 
-      /* console.log(`
-📌 Registro de Ponto
--------------------
-Início do ponto: ${inicioPonto ?? "não registrado"}
-Saída do ponto: ${saidaPonto ?? "não registrado"}
-Tempo do intervalo: ${Intervalo ?? "não registrado"}
-Status atual: ${status}
-        `);*/
+        setTotal(TempoText);
+
+        return TempoText;
     }
+
+    const intervaloEmSegundos = () => {
+      if (!inicioIntervalo || !saidaIntervalo) return 0;
+
+      const toSeconds = (time) => {
+        const [h, m, s] = time.split(":").map(Number);
+        return h * 3600 + m * 60 + s;
+      };
+
+      return Math.max(
+        0,
+        toSeconds(saidaIntervalo) - toSeconds(inicioIntervalo),
+      );
+    };
+
+    
+    const calcularHorasComValores = (inicio, saida, intervaloSeg) => {
+    if (!inicio || !saida) {
+        return "0h 0m 0s";
+    }
+
+    const toSeconds = (time) => {
+        const [h, m, s] = time.split(":").map(Number);
+        return h * 3600 + m * 60 + s;
+    };
+
+    const inicioSec = toSeconds(inicio);
+    const saidaSec = toSeconds(saida);
+
+    const totalSec = Math.max(0, saidaSec - inicioSec - intervaloSeg);
+
+    const h = Math.floor(totalSec / 3600);
+    const m = Math.floor((totalSec % 3600) / 60);
+    const s = totalSec % 60;
+
+    return `${h}h ${m}m ${s}s`;
+    };
+
+    const handlePonto = (state) => {
+    console.log(registros);
+    if (state === "iniciar" && status == "off") {
+        setStatus("Working");
+        setInicioPonto(formatTimer(time));
+    } else if (state === "sair" && status == "Working") {
+        const horaSaida = formatTimer(time);
+        setSaidaPonto(horaSaida);
+
+        const totalIntervalo = handleIntervalo();
+        const intervaloSeg = intervaloEmSegundos();
+        const horasDeTrabalho = calcularHorasComValores(
+        inicioPonto,
+        horaSaida,
+        intervaloSeg,
+        );
+
+        setTotalTrabalho(horasDeTrabalho);
+        setStatus("off");
+        registrandoHandle(horaSaida, totalIntervalo, horasDeTrabalho);
+    } else if (state === "iniciarIntervalo" && status == "Working") {
+        const IntervaloTime = formatTimer(time);
+        setStatus("idle");
+        setInicioIntervalo(IntervaloTime);
+    } else if (state === "breakIntervalo" && status == "idle") {
+        const IntervaloTimeSaida = formatTimer(time);
+        setStatus("Working");
+        setSaidaIntervalo(IntervaloTimeSaida);
+    }
+    };
+
 
 
     return (
@@ -146,12 +213,12 @@ Status atual: ${status}
                     </div>
 
                     <div className='tempo-div'>
-                        <h1>0h 0m</h1>
+                        <h1>{total ? total : '0m 0s'}</h1>
                         <p>Tempo Intervalo</p>
                     </div>
 
                     <div className='tempo-div'>
-                        <h1>0h 0m</h1>
+                        <h1>{totalTrabalho ? totalTrabalho : '0h 0m'}</h1>
                         <p>Tempo Total</p>
                     </div>
 

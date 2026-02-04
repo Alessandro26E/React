@@ -11,8 +11,11 @@ function App() {
   const [inicioPonto, setInicioPonto] = useState()
   const [saidaPonto, setSaidaPonto] = useState()
   const [registros, setRegistro] = useState([])
-  const [Intervalo, setIntervalo] = useState(0)
+  const [inicioIntervalo, setInicioIntervalo] = useState()
+  const [saidaIntervalo, setSaidaIntervalo] = useState()
   const [total, setTotal] = useState()
+  const [totalTrabalho, setTotalTrabalho] = useState()
+  const [id, setId] = useState(0)
 
   return (
     <div className='container'>
@@ -27,10 +30,16 @@ function App() {
         setSaidaPonto,
         registros,
         setRegistro,
-        Intervalo,
-        setIntervalo,
+        inicioIntervalo,
+        setInicioIntervalo,
+        saidaIntervalo,
+        setSaidaIntervalo,
         total,
-        setTotal } } >
+        setTotal,
+        id,
+        setId,
+        totalTrabalho,
+        setTotalTrabalho } } >
 
         <Header/>
         <Home/>
