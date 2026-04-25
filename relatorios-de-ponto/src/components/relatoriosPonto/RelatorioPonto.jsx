@@ -3,8 +3,38 @@ import { FaRegClock } from 'react-icons/fa'
 import { VscGraph } from "react-icons/vsc";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { MdDateRange } from "react-icons/md";
+import AppContext from '../../context/appContext';
+import { useContext, useRef } from 'react';
+import generatePDF, { Margin} from 'react-to-pdf';
+import Template from '../templatePDF/Template';
 
 function RelatorioPonto() {
+    const templateRef = useRef();
+
+    const gerarPDF = async () => {
+        const options = {
+          method: "open",
+
+          page: {
+            margin: Margin.MEDIUM,
+            format: "A4",
+            orientation: "portrait",
+          },
+        }; 
+
+        generatePDF(templateRef, options);
+    }
+
+    const { 
+        dataInicio, 
+        setDataInicio,
+        dataFinal,
+        setDataFinal,
+        registros,
+        setRegistro,
+        formatoRelatorio,
+        setFormatoRelatorio
+    } = useContext(AppContext);
 
     return (
         <div className='relatorio-div'>
@@ -66,12 +96,12 @@ function RelatorioPonto() {
 
                            <div className='date-card'>
                                 <p>De</p>
-                                <input type="date" value="2025-01-01"  />
+                                <input type="date" value={dataInicio} onChange={(event) => setDataInicio(event.target.value)} />
                            </div>
 
                            <div className='date-card'>
                                 <p>Até</p>
-                                <input type="date" value="2026-01-31"  />
+                                <input type="date" value={dataFinal} onChange={(event) => setDataFinal(event.target.value)}  />
                            </div>
 
                         </div>
@@ -80,7 +110,7 @@ function RelatorioPonto() {
                     <div className='tipo-div-card'>
                         <h1>Tipo de Relatório</h1>
                         <div className='box-type'>
-                           <select>
+                           <select >
                                 <option value="1" selected>Resumo Diário</option>
                                 <option value="2">Resumo Semanal</option>
                                 <option value="2">Resumo Mensal</option>
@@ -91,7 +121,7 @@ function RelatorioPonto() {
 
                     <div className='formato-div'>
                         <h1>Formato de Exportação</h1>
-                        <select>
+                        <select onChange={(event) => setFormatoRelatorio(event.target.value)}>
                             <option value="PDF" selected>PDF</option>
                             <option value="Excel (XLSX)">Excel</option>
                             <option value="CSV">CSV</option>
@@ -116,6 +146,8 @@ function RelatorioPonto() {
                         </div>
                         
                     </div>
+
+                    <button onClick={gerarPDF} id='gerarBtn'>Gerar Relatorio</button>
                 </div>
              </div>
 
@@ -124,6 +156,10 @@ function RelatorioPonto() {
                 <div className='scroll-div-relatorios-recentes'>
                     
                 </div>
+             </div>
+
+             <div className='refDiv' ref={templateRef}>
+                <Template/>
              </div>
         </div>  
     )

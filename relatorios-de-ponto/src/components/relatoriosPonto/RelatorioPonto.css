@@ -1,6 +1,7 @@
+
 .relatorio-div {
     width: 80%;
-    height: 80%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -112,7 +113,7 @@
 
 .gerar-container {
     width: 850px;
-    height: 300px;
+    height: 330px;
     margin-top: 20px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -311,4 +312,21 @@
     height: 330px;
     background-color: rgb(233, 233, 233);
      
+}
+
+#gerarBtn {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 16px;
+    border: 2px solid rgb(192, 192, 192);
+    font-family: var(--Font-Inter);
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 100px;
+    margin-top: -10px;
+}
+
+.refDiv {
+    display: block;
 }

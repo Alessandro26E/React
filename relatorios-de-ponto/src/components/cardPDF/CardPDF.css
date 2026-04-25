@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+.card-ponto {
+  font-family: 'DM Sans', sans-serif;
+  background: #ffffff;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 14px;
+  width: 200px;
+  height: 200px;
+  max-width: 480px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  page-break-inside: avoid;
+}
+
+
+.top-ponto-div {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-ponto-div {
+    color: white;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#title-ponto-div > span {
+    font-weight: bold;
+}

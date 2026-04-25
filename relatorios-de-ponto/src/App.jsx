@@ -16,7 +16,10 @@ function App() {
   const [total, setTotal] = useState()
   const [totalTrabalho, setTotalTrabalho] = useState()
   const [id, setId] = useState(0)
-
+  const [dataInicio, setDataInicio] = useState('2026-01-31')
+  const [dataFinal, setDataFinal] = useState('2025-01-01')
+  const [formatoRelatorio, setFormatoRelatorio] = useState('PDF')
+  
   return (
     <div className='container'>
       <AppContext.Provider value={ { 
@@ -39,7 +42,13 @@ function App() {
         id,
         setId,
         totalTrabalho,
-        setTotalTrabalho } } >
+        setTotalTrabalho,
+        dataInicio,
+        setDataInicio,
+        dataFinal,
+        setDataFinal,
+        formatoRelatorio,
+        setFormatoRelatorio, } } >
 
         <Header/>
         <Home/>
