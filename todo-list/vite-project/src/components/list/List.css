@@ -41,6 +41,13 @@
 }
 
 #task-div {
-    transition: 1s ease all;
+    transition: 500ms ease all;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#task-div:hover {
+    background-color: rgb(241, 241, 241);
+}
+#task-div:last-child {
+      border-radius: 0 0 12px 12px; /* só cantos inferiores */
 }
