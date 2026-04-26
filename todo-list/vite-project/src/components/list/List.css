@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 
 #card-list {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -12,16 +12,35 @@
 
 #button-add {
     position: relative;
+    transition: 300ms all ease;
+}
+
+#button-add:hover::after {
+    opacity: 1;
+    top: 100%;
+}
+
+#button-add:hover {
+    transform: scale(1.1);
 }
 
 #button-add::after {
-    content: '';
-    background-color: rgb(140, 39, 255);
-    width: 10px;
-    height: 100%;
+    content: 'Adicionar';
+    width: 100%;
+    height: 10%;
+    font-size: 10px;
+    color: rgb(156, 156, 156);
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
     border-radius: 10px;
     position: absolute; 
     top: 0;
     left: 0;
+    opacity: 0;
+    transition: 300ms all ease;
+}
 
+#task-div {
+    transition: 1s ease all;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
