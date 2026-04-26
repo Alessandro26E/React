@@ -10,12 +10,8 @@ function List() {
     const [input, setInput] = useState('')
     const [tarefa, setTarefa] = useState([])
     const [Id, setId] = useState(0)
-
     const { length, setLength, state,setState } = useContext(AppContext)
     
-    useEffect(() => (
-        console.log(state)
-    ), [state])
     const addTarefa = () => {
         const novaTarefa = {
             nomeTarefa: input,
@@ -28,9 +24,19 @@ function List() {
         setTarefa((prev) => [...prev, novaTarefa])
     }
 
-    useEffect(() => (
-        setLength(tarefa.filter((task) => task.concluida === false).length)
-    ),[tarefa])
+    function updateRestantes () {
+        if (state === "Todas") {
+           setLength(tarefa.length) 
+        } else if (state === "Ativas") {
+            setLength(tarefa.filter((task) => task.concluida === false).length)
+        } else if (state === "Concluidas") {
+            setLength(tarefa.filter((task) => task.concluida).length)
+        }
+    }
+
+    useEffect(() => {
+        updateRestantes()
+    }, [state, tarefa])
 
    function marcarTarefa(taskId) {
      const tarefaAtual = tarefa.map((item) => item.id === taskId ? { ...item, concluida: !item.concluida } : item,);

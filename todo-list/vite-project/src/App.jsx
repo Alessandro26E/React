@@ -1,13 +1,26 @@
 import './App.css'
 import { BiBarChartAlt2  } from 'react-icons/bi'
 import List from './components/list/List'
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import AppContext from './context/appContext'
 
 function App() {
   const [length, setLength] = useState(0)
   const [state, setState] = useState('Todas')
+  const [date, setDate] = useState('')
 
+
+  function atualizandoData() {
+    const Hoje = new Date()
+    const nomeDia = Hoje.toLocaleDateString('pt-BR', {weekday: 'long'})
+    const dataHoje = String(Hoje.getDate()).padStart(2,'0')
+    const mesAtual = Hoje.toLocaleDateString('pt-BR', { month: 'long' });
+    setDate(`${nomeDia}, ${dataHoje} de ${mesAtual}`)
+  }
+
+  useEffect(() => {
+    atualizandoData()
+  },[])
   return (
     <AppContext.Provider 
     value={{
@@ -25,7 +38,7 @@ function App() {
           </div>
 
           <h1 className="text-[#1F1F2E] font-bold text-[25px] font-[Inter]">Minhas Tarefas</h1>
-          <p className="text-[#525252] font-Inter font-medium text-[13px]">segunda, 14 de fevereiro</p>
+          <p className="text-[#525252] font-Inter font-medium text-[13px]">{date}</p>
 
         </div>
 
