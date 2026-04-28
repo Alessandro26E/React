@@ -25,7 +25,6 @@ function App() {
     } else {
        setTheme("Light")
     }
-    console.log(theme)
   }
 
   useEffect(() => {
