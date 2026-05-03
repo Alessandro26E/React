@@ -11,7 +11,7 @@ function List() {
   const [tarefa, setTarefa] = useState([]);
   const { length, setLength, state, setState } = useContext(AppContext);
 
-  const inputRef = useRef()
+  const inputRef = useRef();
 
   const addTarefa = async () => {
     await api.post("/tarefa", {
@@ -19,7 +19,7 @@ function List() {
       concluida: false,
     });
 
-    getTask()
+    getTask();
   };
 
   async function getTask() {
@@ -37,28 +37,36 @@ function List() {
       setLength(tarefa.filter((task) => task.concluida).length);
     }
   }
+
   useEffect(() => {
-      getTask()
-    },[])
-    
+    getTask();
+  }, []);
+
   useEffect(() => {
     updateRestantes();
   }, [state, tarefa]);
 
-  async function marcarTarefa(taskId) {
-    const tarefaAtual = await api.get("/tarefa");
+async function marcarTarefa(taskId) {
+  // find retorna o objeto diretamente, filter retorna array
+  const tarefaAtual = tarefa.find((task) => task.id === taskId)
 
-    await api.put(`/tarefa/${taskId}`, {
-      concluida: true,
-    });
+  // Atualiza o estado mapeando o array e alternando só a tarefa certa
+  setTarefa(tarefa.map((task) => 
+    task.id === taskId 
+      ? { ...task, concluida: !task.concluida } 
+      : task
+  ))
 
-
-    setTarefa((prev) => prev.map((task) => (task.id === taskId) ? {...task, concluida: true} : task ));
-  }
+  // Envia pro banco com o valor alternado
+  await api.put(`/tarefa/${taskId}`, {
+    tarefa: tarefaAtual.tarefa,
+    concluida: !tarefaAtual.concluida
+  })
+}
 
   async function removerTarefa(taskId) {
-    await api.delete(`/tarefa/${taskId}`)
-    getTask()
+    await api.delete(`/tarefa/${taskId}`);
+    getTask();
   }
 
   return (
@@ -91,7 +99,7 @@ function List() {
         </AppContext.Provider>
 
         <div className="w-full mt-2 overflow-y-auto h-[440px]">
-          {console.log(tarefa), tarefa.map((task) => {
+          {tarefa.map((task) => {
             if (state === "Todas") {
               return (
                 <div
