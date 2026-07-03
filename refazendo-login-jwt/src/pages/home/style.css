@@ -1,0 +1,29 @@
+#div-top {
+    width: 100%;
+    height: 93.2%;
+    background-color: rgb(32, 32, 32);
+    background-image: url(https://wallpapers.com/images/hd/paisagem-ultra-hd-de-4k-3840-x-2160-f7f5eax71jomzq3h.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes textPrincipalAnim {
+    0% {
+        font-size: 0px;
+    }
+
+    100% {
+        font-size: 45px;
+    }
+}
+
+#h1-principal {
+    color: rgb(255, 255, 255);
+    font-size: 45px;
+    font-weight: 200;
+    text-shadow: rgba(255, 255, 255, 1) 0px 54px 55px, rgba(255, 255, 255, 1) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(255, 255, 255, 1)x 12px 13px, rgba(245, 245, 245, 1)x -3px 5px;
+    animation-name: textPrincipalAnim;
+    animation-duration: 1s;
+}
