@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './style.css'
 import api from '../../../api/api'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Login () {
     const Navigate = useNavigate()
@@ -20,13 +20,14 @@ function Login () {
     };
     
     const verificandoUsuario = async () => {
-        const Allusers = await api.get('/cadastro')
+        const Allusers = await api.get('/usuarios', {
+            email: email
+        })
         
         if (!validateEmail(email)) {
             return console.log("Email Invalido!") 
         }
 
-        console.log("Email Validado!")
 
         if (password.length <= 5 ) {
             return console.log("Senha Muito curta. Min 5 Letras")
@@ -44,7 +45,8 @@ function Login () {
         })
 
         console.log('Usuario logado com sucesso!')
-        console.log(usuario)
+        console.log('Token Atualizado: ', response.data)
+        localStorage.setItem('token', response.data)
         Navigate('/home')
     }
 

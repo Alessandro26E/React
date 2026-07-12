@@ -29,6 +29,28 @@ app.post('/cadastro',async (req, resp) => {
     resp.json({token})
 })
 
+app.post('/autoLogin',async (req, resp) => {
+    console.log(req)
+    const authHeader =  req.headers['authorization']
+    const {token} = req.body
+
+    if (!token) {
+        return resp.status(403).json({message: 'Não Autorizado, FALTA TOKEN!'})
+    }
+
+    console.log('Token encontrado! prosseguindo,')
+
+    jwt.verify(token, SECRET_TOKEN_KEY, async (err, token) => {
+
+        if (err) {         
+            return  resp.status(403).json({message: 'Token Expirado!'})
+        }
+
+        
+        resp.status(201).json({message: token.email})
+    })
+})
+
 app.get('/cadastro',async (req, resp) => {
     const {email, password} = req.body
     const authHeader = req.headers['authorization']
@@ -52,6 +74,12 @@ app.get('/cadastro',async (req, resp) => {
 
     })
 
+})
+
+app.get('/usuarios',async (req, resp) => {
+    const allUsers = await prisma.cadastrados.findMany()
+
+    resp.send(allUsers)
 })
 
 app.post('/login',async (req, resp) => {

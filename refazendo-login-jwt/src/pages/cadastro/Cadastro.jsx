@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './style.css'
 import api from '../../../api/api'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Cadastro () {
     const Navigate = useNavigate()
@@ -44,6 +44,44 @@ function Cadastro () {
       console.log(`Email: ${email} Password: ${password}`);
       console.log("Usuario cadastrado com sucesso!");
     };
+
+    useEffect( () => {
+
+      const autoLogin = async () => {
+        const token = localStorage.getItem('token')
+
+        if (!token) {
+          return console.log('Não tem token, primeira vez no site!')
+        }
+
+        console.log('token encontrado')
+
+        try {
+
+          const result = await api.post('/autoLogin', {
+            token: localStorage.getItem('token')
+          })
+
+          if (result) {
+            console.log('Token Valido: Encontrado')
+
+            Navigate('/home')
+            return console.log('resultado: ', result.data.message)
+          }
+
+          
+        
+
+        } catch (err) {
+           Navigate('/')
+          console.log("Token Expirado!")
+        }
+  
+      }
+
+      autoLogin()
+      
+    },[])
 
     return (
         <div className='bg-[#2e2e2e] w-screen h-screen flex flex-col items-center'>
