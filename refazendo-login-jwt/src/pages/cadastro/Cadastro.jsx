@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import './style.css'
 import api from '../../../api/api'
 import { useEffect, useState } from 'react';
-
+import cookies from 'js-cookie'
 function Cadastro () {
     const Navigate = useNavigate()
 
@@ -37,7 +37,8 @@ function Cadastro () {
 
       if (response) {
         console.log(response.data.token)
-        localStorage.setItem('token', response.data.token)
+        cookies.set('token', response.data.token, { expires: 1})
+
       }
 
       Navigate('/login')
@@ -48,13 +49,12 @@ function Cadastro () {
     useEffect( () => {
 
       const autoLogin = async () => {
-        const token = localStorage.getItem('token')
-
+        const token = cookies.get('token')
         if (!token) {
           return console.log('Não tem token, primeira vez no site!')
         }
 
-        console.log('token encontrado')
+        console.log('token encontrado: ' + token)
 
         try {
 
