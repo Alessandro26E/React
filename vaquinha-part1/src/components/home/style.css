@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+
+@import "tailwindcss";
+
+@theme {
+  --font-Montserrat: "Montserrat", sans-serif;
+  --font-Inter:"Inter", sans-serif;
+  --font-googleSans: "Google Sans", sans-serif;
+  --font-ArchivoBlack: "Archivo Black", sans-serif;
+  --radius: 1rem;
+
+  --color-background: oklch(0.972 0.012 95);
+  --color-foreground: oklch(0.28 0.03 145);
+
+  --color-card: oklch(0.995 0.005 95);
+  --color-card-foreground: oklch(0.28 0.03 145);
+
+  --color-popover: oklch(0.995 0.005 95);
+  --color-popover-foreground: oklch(0.28 0.03 145);
+
+  --color-primary: oklch(0.55 0.075 145);
+  --color-primary-foreground: oklch(0.985 0.01 95);
+
+  --color-secondary: oklch(0.91 0.03 140);
+  --color-secondary-foreground: oklch(0.33 0.04 145);
+
+  --color-muted: oklch(0.94 0.015 100);
+  --color-muted-foreground: oklch(0.5 0.02 140);
+
+  --color-accent: oklch(0.8 0.07 140);
+  --color-accent-foreground: oklch(0.28 0.03 145);
+
+  --color-destructive: oklch(0.577 0.18 27.325);
+  --color-destructive-foreground: oklch(0.985 0.01 95);
+
+  --border: oklch(0.88 0.02 120);
+  --input: oklch(0.88 0.02 120);
+  --ring: oklch(0.55 0.075 145);
+
+  --success: oklch(0.62 0.11 150);
+  --success-foreground: oklch(0.985 0.01 95);
+
+  --warning: oklch(0.78 0.11 75);
+  --warning-foreground: oklch(0.3 0.05 60);
+
+  --gradient-hero: linear-gradient(
+    160deg,
+    oklch(0.55 0.075 145) 0%,
+    oklch(0.63 0.09 152) 55%,
+    oklch(0.72 0.08 130) 100%
+  );
+
+  --shadow-soft: 0 10px 30px -14px oklch(0.4 0.05 145 / 0.35);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+}
